@@ -1,0 +1,46 @@
+<form [formGroup]="form">
+    <p-card>
+        <div class="p-fluid">
+          
+            <div class="field">
+                <label for="universidad">Universidad</label>
+                <p-autoComplete formControlName="selectedUniversidad" [suggestions]="filteredUniversidades" (completeMethod)="filterUniversidad($event)" field="nombre" [minLength]="1"></p-autoComplete>
+                <small *ngIf="(form.controls['selectedUniversidad'].invalid && submitted) || (form.controls['selectedUniversidad'].dirty && form.controls['selectedUniversidad'].invalid)" class="p-error">Universidad es requerido.</small>
+            </div>
+
+            <div class="field">
+                <label for="centro">Centro de Labores</label>
+                <p-dropdown [options]="centroLabores" formControlName="selectedTrabajo" optionLabel="nombre" [showClear]="true" placeholder="Seleccione"></p-dropdown>
+                <small *ngIf="(form.controls['selectedTrabajo'].invalid && submitted) || (form.controls['selectedTrabajo'].dirty && form.controls['selectedTrabajo'].invalid)" class="p-error">Trabajo es requerido.</small>
+            </div>
+
+            <div class="field">
+                <label for="salario">Salario</label>
+                <input type="number" pInputText formControlName="salario" > 
+                <small *ngIf="(form.controls['salario'].invalid && submitted) || (form.controls['salario'].dirty && form.controls['salario'].invalid)" class="p-error">Salario es requerido.</small>
+            </div>
+
+            <div class="field">
+                <label for="salario">Carrera</label>
+                <input type="text" pInputText formControlName="carrera" > 
+                <small *ngIf="(form.controls['carrera'].invalid && submitted) || (form.controls['carrera'].dirty && form.controls['carrera'].invalid)" class="p-error">Carrera es requerida.</small>
+            </div>
+
+            <div class="field">
+                <label for="salario">Años de Experiencia</label>
+                <p-inputNumber formControlName="experiencia" [min]="0" [max]="100"></p-inputNumber>
+                <small *ngIf="(form.controls['experiencia'].invalid && submitted) || (form.controls['experiencia'].dirty && form.controls['experiencia'].invalid)" class="p-error">Experiencia es requerido.</small>
+            </div>
+            
+
+        </div>
+
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-end">
+                <p-button label="Regresar" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+                <p-button label="Siguiente" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+            </div>
+        </ng-template>
+        
+    </p-card>
+</form>

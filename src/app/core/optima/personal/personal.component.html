@@ -1,0 +1,99 @@
+<!--
+<div class="register-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>DNI</label>
+            <input
+                type="text"
+                class="form-control"
+                />
+            <button>Buscar</button>
+        </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input
+          type="text"
+          formControlName="fullname"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+        />
+        @if (submitted && f['fullname'].errors) {
+        <div class="invalid-feedback">
+          @if (f['fullname'].errors['required']) {
+          <div>Fullname is required</div>
+          }
+        </div>
+        }
+      </div>
+  
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+        />
+        @if (submitted && f['username'].errors) {
+        <div class="invalid-feedback">
+          @if (f['username'].errors['required']) {
+          <div>Username is required</div>
+          }
+          @if (f['username'].errors['minlength']) {
+          <div>Username must be at least 6 characters</div>
+          }
+          @if (f['username'].errors['maxlength']) {
+          <div>Username must not exceed 20 characters</div>
+          }
+        </div>
+        }
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </form>
+  </div>
+  -->
+
+  <form [formGroup]="form">
+    <p-card>
+        <div class="p-fluid">
+          
+          <div class="field">
+            <p-inputGroup>
+              <input type="text" pInputText formControlName="dni" placeholder="DNI" />
+              <button type="button" pButton icon="pi pi-search" class="p-button-warning" (click)="buscar()"></button>
+            </p-inputGroup>
+          </div>
+
+            <div class="field">
+                <label for="nombres">Nombres</label>
+                <input type="text" pInputText formControlName="nombres" > 
+                <small *ngIf="(form.controls['nombres'].invalid && submitted) || (form.controls['nombres'].dirty && form.controls['nombres'].invalid)" class="p-error">Nombre es requerido.</small>
+            </div>
+            <div class="field">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" pInputText formControlName="apellidos"> 
+                <small class="p-error" *ngIf="(form.controls['apellidos'].invalid && submitted )|| (form.controls['apellidos'].dirty && form.controls['apellidos'].invalid)">Apellido es requerido.</small>
+            </div>
+            <div class="field">
+                <label for="edad">Edad</label>
+                <input type="number" pInputText formControlName="edad"> 
+                <small class="p-error" *ngIf="(form.controls['edad'].invalid && submitted) || (form.controls['edad'].dirty && form.controls['edad'].invalid)">Edad is requerida.</small>
+            </div>
+            <div class="field">
+              <label for="ciudad">Ciudad</label>
+              <input type="text" pInputText formControlName="ciudad"> 
+              <small class="p-error" *ngIf="(form.controls['ciudad'].invalid && submitted) || (form.controls['ciudad'].dirty && form.controls['ciudad'].invalid)">Ciudad is requerida.</small>
+          </div>
+        </div>
+
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-end">
+                <p-button label="Siguiente" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+            </div>
+        </ng-template>
+        
+    </p-card>
+</form>

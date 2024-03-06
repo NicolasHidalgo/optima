@@ -1,0 +1,70 @@
+<div class="stepsdemo-content">
+    <p-card>
+        <ng-template pTemplate="title">
+            Confirmation
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+            Enter your card details
+        </ng-template>
+        <ng-template pTemplate="content">
+            <div class="field col-12">
+                <label for="class">DNI: </label>
+                <b>{{info.dni ? info.dni : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Nombres: </label>
+                <b>{{info.nombres ? info.nombres : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Apellidos: </label>
+                <b>{{info.apellidos ? info.apellidos : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Edad: </label>
+                <b>{{info.edad ? info.edad : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Ciudad: </label>
+                <b>{{info.ciudad ? info.ciudad : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Fecha Nacimiento: </label>
+                <b>{{info.fecNac | date: 'dd/MM/yyyy'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Fecha Nacimiento Conyuge: </label>
+                <b>{{info.fecNacCon | date: 'dd/MM/yyyy'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Fecha Registro: </label>
+                <b>{{info.fecRegistro ? info.fecRegistro : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Universidad: </label>
+                <b>{{info.universidad ? info.universidad : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Trabajo: </label>
+                <b>{{info.trabajo ? info.trabajo : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Salario: </label>
+                <b>{{info.salario ? info.salario : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Carrera: </label>
+                <b>{{info.carrera ? info.carrera : '-'}}</b>
+            </div>
+            <div class="field col-12">
+                <label for="Age">Experiencia: </label>
+                <b>{{info.experiencia ? info.experiencia : '-'}}</b>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-end">
+                <p-button label="Regresar" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+                <p-button label="Guardar" (onClick)="complete()" icon="pi pi-angle-right" iconPos="right" styleClass="p-button-success"></p-button>
+            </div>
+        </ng-template>
+    </p-card>
+</div>

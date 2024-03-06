@@ -1,0 +1,28 @@
+{
+    "data":[
+        {
+            "nombre": "Universidad Privada de Ciencias Aplicadas",
+            "codigo": "UPC"
+        },
+        {
+            "nombre": "Universidad del Pacífico",
+            "corto": "UP"
+        },
+        {
+            "nombre": "Universidad de Lima",
+            "corto": "ULIMA"
+        },
+        {
+            "nombre": "Pontificia Universidad Católica del Perú",
+            "corto": "PUCP"
+        },
+        {
+            "nombre": "Universidad San Martin de Porres",
+            "corto": "USMP"
+        },
+        {
+            "nombre": "Universidad Nacional de Ingeniería",
+            "corto": "UNI"
+        }
+    ]
+}

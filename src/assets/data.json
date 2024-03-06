@@ -1,0 +1,18 @@
+{
+    "data":[
+        {
+            "dni": "72843916",
+            "nombres": "Nicolas",
+            "apellidos": "Hidalgo",
+            "edad": 27,
+            "ciudad": "Ancon"
+        },
+        {
+            "dni": "72843917",
+            "nombres": "Oscar",
+            "apellidos": "Fernandez",
+            "edad": 35,
+            "ciudad": "Santa Rosa"
+        }
+    ]
+}

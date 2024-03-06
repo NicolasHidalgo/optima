@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+    <p-card>
+        <div class="p-fluid">
+          
+            <div class="field">
+                <label for="nombres">Fecha Nacimiento</label>
+                <p-calendar formControlName="fecNacimiento" dateFormat="dd/mm/yy"></p-calendar>
+                <small *ngIf="(form.controls['fecNacimiento'].invalid && submitted) || (form.controls['fecNacimiento'].dirty && form.controls['fecNacimiento'].invalid)" class="p-error">Fecha de Nac. es requerido.</small>
+            </div>
+            <div class="field">
+                <label for="nombres">Fecha Nacimiento Conyuge</label>
+                <p-calendar formControlName="fecNacimientoConyuge" dateFormat="dd/mm/yy"></p-calendar>
+            </div>
+        </div>
+
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-end">
+                <p-button label="Regresar" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+                <p-button label="Siguiente" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+            </div>
+        </ng-template>
+        
+    </p-card>
+</form>
